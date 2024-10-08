@@ -1,0 +1,32 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Ignore IDE-specific files
+.idea/
+.classpath
+.project
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore compiled Java classes
+*.class
+
+# Ignore target directory
+target/
+
+# Ignore VS Code configurations
+.vscode/

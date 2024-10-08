@@ -33,9 +33,15 @@ public class MyNaiveRMQ implements RMQ {
      * l'indice de la valeur minimale dans cette plage.
      */
 	public int rmq(int i, int j) {
-		
-		// TODO
-		return -1;
+		float min = Float.MAX_VALUE;
+		int index = i;
+		for(int k = i; i <= j; i++){
+			if (min < origElems[i]) {
+				min = origElems[i];
+				index = i;
+			}
+		}
+		return index;
 	}
 
 }

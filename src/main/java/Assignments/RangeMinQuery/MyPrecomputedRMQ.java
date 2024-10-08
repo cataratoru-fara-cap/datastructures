@@ -22,9 +22,24 @@ public class MyPrecomputedRMQ implements RMQ {
      * @elems Le tableau sur lequel RMQ doit être calculé.
      */
     public MyPrecomputedRMQ(float[] elems) {
-    	precomputed = new int[elems.length][elems.length];
-        
-    	// TODO: implémenter la fonction de prétraitement 
+        precomputed = new int[elems.length][elems.length];
+
+        for (int i = 0; i < elems.length; i++)
+            precomputed[i][i] = i;
+
+        for (int k = 0; k < elems.length; k++) {
+            for (int i = k; i < elems.length; i++) {
+                if (i == elems.length - 1)
+                    break;
+                int j = i + 1;
+
+                if (elems[precomputed[i][j - 1]] < elems[j])
+                    precomputed[i][j] = precomputed[i][j - 1];
+                else
+                    precomputed[i][j] = j;
+                // TODO: implémenter la fonction de prétraitement
+            }
+        }
     }
 
     /**
