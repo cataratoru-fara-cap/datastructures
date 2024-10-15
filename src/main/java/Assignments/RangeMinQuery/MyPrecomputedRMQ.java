@@ -27,13 +27,10 @@ public class MyPrecomputedRMQ implements RMQ {
         for (int i = 0; i < elems.length; i++)
             precomputed[i][i] = i;
 
-        for (int k = 0; k < elems.length; k++) {
-            for (int i = k; i < elems.length; i++) {
-                if (i == elems.length - 1)
-                    break;
-                int j = i + 1;
+        for (int j = 0; j < elems.length; j++) { // j represents the diagonal index
+            for(int i = 0; i < elems.length; i++) { // i represents the row index
 
-                if (elems[precomputed[i][j - 1]] < elems[j])
+                if (elems[precomputed[i][j + i]] < elems[precomputed[i+1][j + i + 1]])
                     precomputed[i][j] = precomputed[i][j - 1];
                 else
                     precomputed[i][j] = j;
